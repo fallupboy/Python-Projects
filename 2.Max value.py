@@ -1,0 +1,5 @@
+x=float(input("Enter the first number : "))
+y=float(input("Enter the second number : "))
+z=float(input("Enter the third number : "))
+print("The max value is : ", max(x, y, z))
+input("Press any key to exit")

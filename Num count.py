@@ -1,0 +1,5 @@
+n = int(input("Type a number and see how many digits are in it: "))
+n = abs(n)
+n = str(n)
+count = len(n)
+print(count)

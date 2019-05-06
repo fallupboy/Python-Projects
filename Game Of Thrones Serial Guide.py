@@ -1,7 +1,7 @@
 import webbrowser
 
 link = 'http://hdrezka-ag.com/series/fantasy/45-igra-prestolov-2011-tv-series-1.html#t:65-s:season-e:episodes'
-print("Hey! I can help you to navigate to the 'Game of Thrones' any season and series!")
+print("Hey! I can help you to navigate to the 'Game of Thrones' any season and episodes!")
 season = (input("First type the number of the season you want to watch: "))
 episodes = (input("Now type the number of the episode you want to see: "))
 choice = [season, episodes]

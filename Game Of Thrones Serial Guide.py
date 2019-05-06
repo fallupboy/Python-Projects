@@ -12,7 +12,7 @@ elif choice[0] == '7' and choice[1] > '7':
     print("Incorrect value. Season 7 has 7 episodes. Try again.")
     exit(0)
 elif choice[0] == '8' and choice[1] > '4':
-    print("Incorrect value. Season 8 has 6 episodes and there are only 4 series have been released. Try again!",)
+    print("Incorrect value. Season 8 has 6 episodes and there are only 4 of them have been released. Try again!",)
     exit(0)
 print("Enjoy:)")
 readyLink = link.replace('season', season).replace('episode', episode)

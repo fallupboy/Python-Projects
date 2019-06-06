@@ -1,0 +1,18 @@
+Reading data from .json file. 
+
+Json is a type of data format used to store, read and write data. 
+It is the most modern and convenient way to store data, it is fast, object/dictionary accessible and lightweight.
+
+In this folder you have  .json file with data in it. Write a py app to get asked results:
+
+(All results should be executed Programmaticaly! Imagine that data will change tomorrow and you will have +10 new students and teachers, so make sure
+ your code logic will work for them too.)
+
+1. Get the most popular student in class. 
+2. Get the most popular teacher in class. 
+3. How many people in school? (Tip: teachers + students)
+4. Get All students who's name starts with 'M'.
+5. Get Favorite student among all teachers.
+6. Get the teacher, who's Last Name (!) starts with 'G'.
+
+Good luck. 

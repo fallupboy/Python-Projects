@@ -1,0 +1,45 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Michael Peterson",
+            "favorite_teacher": [13],
+            "friends": [2, 3, 4]
+        },
+        {
+            "id": 2,
+            "name": "Daniel Kors",
+            "favorite_teacher": [11],
+            "friends": [1, 3]
+        },
+        {
+            "id": 3,
+            "name": "Samuel Jackson",
+            "favorite_teacher": [11],
+            "friends": [1, 2]
+        },
+        {
+            "id": 4,
+            "name": "Matthew Wolf",
+            "favorite_teacher": [12],
+            "friends": [1]
+        }
+    ],
+    "teachers": [
+        {
+            "id": 11,
+            "name": "Ronald Beggins",
+            "favorite_student": 1
+        },
+        {
+            "id": 12,
+            "name": "Ruby Garcia",
+            "favorite_student": 4
+        },
+        {
+            "id": 13,
+            "name": "Martin Poll",
+            "favorite_student": 1
+        }
+    ]
+}

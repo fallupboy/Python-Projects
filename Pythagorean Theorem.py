@@ -11,7 +11,11 @@ elif toDo == 2:
     firstCatheter = int(input("Set the value to the first catheret: "))
     hypotenuse = int(input("Set the value of the hypotenuse: "))
     print("The second catheter equales", math.sqrt(hypotenuse ** 2 - firstCatheter ** 2))
-else:
+elif toDo == 3:
     firstCatheter = int(input("Set the value to the first catheret: "))
     secondCatheter = int(input("Set the value to the second catheter: "))
     print("Hypotenuse equales", math.sqrt(firstCatheter ** 2 + secondCatheter ** 2))
+else:
+    print("Incorrect value! Try again")
+    exit(0)
+input("Press 'ENTER' to exit")

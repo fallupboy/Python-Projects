@@ -9,7 +9,7 @@ print(23 * "-", "You will have 5 attemps to win our jackpot", 23 * "-")
 print(20 * "-", "Every unlucky attemp will raise jackpot by twice", 20 * "-")
 
 while loop:
-    winNum = random() * 19 + 1
+    winNum = random() * 20 + 1
     winNum = int(winNum)
     userNum = int(input("Enter a number to play (1 - 20): "))
     if userNum < 1 or userNum > 20:

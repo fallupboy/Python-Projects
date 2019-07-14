@@ -7,29 +7,46 @@ loop = True
 attemps = 4
 jackpot = 25000
 rating = "rating"
+back = "return"
 
 print(20 * "-", "Welcome to Python Lotto! Today's jackpot is 25000$", 20 * "-")
 print(23 * "-", "You will have 5 attemps to win our jackpot", 23 * "-")
 print(25 * "-", "Every unlucky attemp will lower jackpot", 25 * "-")
 print()
-name = input("Please type your name to play or type 'rating' to see last 10 games history: ")
+nameCheck = True
+while nameCheck:
+        name = input("Please type your name to play or type 'rating' to see last 10 games history: ")
+        if name == "":
+            print("That is not an option")
+        else:
+            nameCheck = False
 
 if name == rating:
-    for line in reversed(open(path).readlines()):
-        print(line.rstrip())
-    input("Press ENTER to exit: ")
+    ct = 1
+    try:
+        for line in reversed(open(path).readlines()):
+            if(ct <=10): 
+                print(ct, line.rstrip())
+            else: 
+                break
+            ct+=1
+        input("Press ENTER to exit: ")
+    except:
+        print("Error occured. Please try again later.")
     exit(0)
 
 while loop:
-    winNum = random() * 20 + 1
-    winNum = int(winNum)
-    userNum = input("Enter a number to play (1 - 20): ")
-    try:
-        userNum = int(userNum)
-        pass
-    except ValueError:
-        print("That is not an option")
-        userNum = int(input("Enter a number to play (1 - 20): "))
+    winNum = random() * 10 + 1
+    winNum = int(winNum)    
+    
+    intCheck = True
+    while intCheck:  
+        try:
+            userNum = int(input("Enter a number to play (1 - 20): "))
+            intCheck = False
+        except ValueError:
+            print("That is not an option")
+            userNum = None
 
     if attemps == 0:
         print("You are out of attemps. The winning number was", winNum, "| You won 0 $")

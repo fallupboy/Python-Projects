@@ -43,7 +43,10 @@ while loop:
     while intCheck:  
         try:
             userNum = int(input("Enter a number to play (1 - 20): "))
-            intCheck = False
+            if userNum >= 1 and userNum <= 10:
+                intCheck = False
+            else:
+                print("Choose between 1 and 10")
         except ValueError:
             print("That is not an option")
             userNum = None

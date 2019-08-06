@@ -14,7 +14,7 @@ desc = []
 cityCheck = True
 while cityCheck:
     city_name = input("Enter city name: ")
-    map_key = '4Lxwf60AchZ3WzqTj2AoDBx2dUinzEMm'
+    map_key = 'YOUR_MAP_KEY'
     city_get_url = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + map_key + '&location=' + city_name
     city_data = requests.get(city_get_url)
     city_data = city_data.json()
@@ -46,7 +46,7 @@ g = geocoder.mapquest(city_arr, method='batch', key=map_key)
 lat = g.lat
 lon = g.lng
 
-app_id = '7b9d5008d599ec2605884c73a1a4bcb2'
+app_id = 'YOUR_APP_ID'
 weather_get_url = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + str(lat) + '&lon=' + str(lon) + '&appid=' + app_id + '&mode=json&units=metric'
 weather_data = requests.post(weather_get_url)
 weather_data = weather_data.json()
@@ -64,7 +64,7 @@ print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format("Date", "Description", "Temperatur
 for i in range(len(humidity)):
     print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format(str(date[i]), desc[i], str(round(temp[i], 1)) + " C\N{DEGREE SIGN}", str(int(wind[i])) + " m/s", str(humidity[i]) + " %"))
 
-path = 'C:/Users/FallUpBoy/Desktop/Python projects/API Weather Checker/log.txt'
+path = 'YOUR_PATH'
 with open(path, "a+") as file:
     date = datetime.datetime.now().strftime("%m/%d/%y | %H:%M:%S")
     file.write('Logged data at: ' + str(date) + '\n')

@@ -1,39 +1,61 @@
+import pycountry
 import requests
+import geocoder
 import datetime
 import time
 
+city_arr = []
 humidity = []
 date = []
 temp = []
 wind = []
 desc = []
 
-errorCheck = True
-while errorCheck:
-    try:
-        city_name = input("Enter city name: ")
-        app_id = '7b9d5008d599ec2605884c73a1a4bcb2'
-        complete_url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city_name + '&appid=' + app_id + '&mode=json&units=metric'
-        data = requests.post(complete_url)
-        data = data.json()
+cityCheck = True
+while cityCheck:
+    city_name = input("Enter city name: ")
+    map_key = '4Lxwf60AchZ3WzqTj2AoDBx2dUinzEMm'
+    city_get_url = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + map_key + '&location=' + city_name
+    city_data = requests.get(city_get_url)
+    city_data = city_data.json()
 
-        for lists in data['list']:
-            date.append(lists['dt_txt'])
-            humidity.append(lists['main']['humidity'])
-            temp.append(lists['main']['temp'])
-            wind.append(lists['wind']['speed'])
-            desc.append(lists['weather'][0]['description'])
+    city_arr = []
+    for i in city_data['results'][0]['locations']:
+        if i['adminArea5'] == "":
+            continue
+        city_arr.append(pycountry.countries.get(alpha_2=i['adminArea1']).name + ", " + i['adminArea5'] + " " + i['adminArea3'])
+    if city_arr == []:
+        print("City not found! Try again.")
+    else:
+        cityCheck = False    
 
-        print("*" * 80)
-        print("\t\t" + "Details about the forecast of the city " + city_name + " for 5 days:\n")
-        print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format("Date", "Description", "Temperature", "Wind", "Humidity\n"))
-        for i in range(len(humidity)):
-            print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format(str(date[i]), desc[i], str(round(temp[i], 1)) + " C\N{DEGREE SIGN}", str(int(wind[i])) + " m/s", str(humidity[i]) + " %"))
-        errorCheck = False
-    except KeyError:
-            print("City not found. Try again.")
-            print()
+for i, value in enumerate(city_arr, 1):
+    print(i, value)
 
+choice = int(input("Choose your city (1, 2, 3...): "))
+print(city_arr[choice - 1])
+
+g = geocoder.mapquest(city_arr, method='batch', key=map_key)
+lat = g.lat
+lon = g.lng
+
+app_id = '7b9d5008d599ec2605884c73a1a4bcb2'
+weather_get_url = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + str(lat) + '&lon=' + str(lon) + '&appid=' + app_id + '&mode=json&units=metric'
+weather_data = requests.post(weather_get_url)
+weather_data = weather_data.json()
+
+for lists in weather_data['list']:
+    date.append(lists['dt_txt'])
+    humidity.append(lists['main']['humidity'])
+    temp.append(lists['main']['temp'])
+    wind.append(lists['wind']['speed'])
+    desc.append(lists['weather'][0]['description'])
+
+print("*" * 80)
+print("\t\t" + "Details about the forecast of the city " + city_name + " for 5 days:\n")
+print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format("Date", "Description", "Temperature", "Wind", "Humidity\n"))
+for i in range(len(humidity)):
+    print('{:^25}{:^20}{:^20}{:^20}{:^20}'.format(str(date[i]), desc[i], str(round(temp[i], 1)) + " C\N{DEGREE SIGN}", str(int(wind[i])) + " m/s", str(humidity[i]) + " %"))
 
 path = 'C:/Users/FallUpBoy/Desktop/Python projects/API Weather Checker/log.txt'
 with open(path, "a+") as file:

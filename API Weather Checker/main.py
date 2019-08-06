@@ -32,9 +32,16 @@ while cityCheck:
 for i, value in enumerate(city_arr, 1):
     print(i, value)
 
-choice = int(input("Choose your city (1, 2, 3...): "))
-print(city_arr[choice - 1])
-
+errorCheck = True
+while errorCheck:
+    try:
+        choice = int(input("Choose your city (1, 2, 3...): "))
+        print(city_arr[choice - 1])
+        errorCheck = False
+    except ValueError:
+        print("Invalid input.")
+    except IndexError:
+        print("Invalid input.")
 g = geocoder.mapquest(city_arr, method='batch', key=map_key)
 lat = g.lat
 lon = g.lng

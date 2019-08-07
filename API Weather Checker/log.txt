@@ -1,24 +1,4 @@
-Logged data at: 08/05/19 | 13:25:36
-Logged data at: 08/05/19 | 13:25:49
-Logged data at: 08/05/19 | 13:26:28
-Logged data at: 08/05/19 | 13:27:26
-Logged data at: 08/05/19 | 13:28:09
-Logged data at: 08/05/19 | 13:28:52
-Logged data at: 08/05/19 | 13:29:24
-Logged data at: 08/05/19 | 13:29:49
-Logged data at: 08/05/19 | 13:30:22
-Logged data at: 08/05/19 | 13:42:43
-Logged data at: 08/05/19 | 13:47:03
-Logged data at: 08/05/19 | 13:48:12
-Logged data at: 08/05/19 | 13:51:44
-Logged data at: 08/05/19 | 13:54:45
-Logged data at: 08/05/19 | 13:55:05
-Logged data at: 08/05/19 | 13:58:43
-Logged data at: 08/05/19 | 14:16:10
-Logged data at: 08/05/19 | 14:16:28
-Logged data at: 08/05/19 | 14:16:37
-Logged data at: 08/05/19 | 14:16:54
-Logged data at: 08/05/19 | 14:17:06
-Logged data at: 08/05/19 | 14:17:21
-Logged data at: 08/05/19 | 14:17:51
-Logged data at: 08/05/19 | 14:19:02
+Logged data at: 08/07/19 | 08:06:47 | Location: United States, New York NY
+Logged data at: 08/07/19 | 08:11:32 | Location: United States, Washington DC
+Logged data at: 08/07/19 | 08:12:52 | Location: Italy, Rome LAZIO
+Logged data at: 08/07/19 | 08:13:22 | Location: United Kingdom, London 

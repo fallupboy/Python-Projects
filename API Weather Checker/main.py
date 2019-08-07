@@ -15,7 +15,7 @@ cityCheck = True
 while cityCheck:
     city_name = input("Enter city name: ")
     map_key = 'YOUR_MAP_KEY'
-    city_get_url = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + map_key + '&location=' + city_name
+    city_get_url = 'http://www.mapquestapi.com/geocoding/v1/address?key=' + map_key + '&location=' + city_name + '&maxResults=30'
     city_data = requests.get(city_get_url)
     city_data = city_data.json()
 
@@ -67,7 +67,7 @@ for i in range(len(humidity)):
 path = 'YOUR_PATH'
 with open(path, "a+") as file:
     date = datetime.datetime.now().strftime("%m/%d/%y | %H:%M:%S")
-    file.write('Logged data at: ' + str(date) + '\n')
+    file.write('Logged data at: ' + str(date) + " | Location: " + city_arr[choice - 1] + '\n')
 print()
 print("*" * 80)
 input("Press ENTER to exit")
